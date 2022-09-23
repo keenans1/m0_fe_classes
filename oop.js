@@ -3,7 +3,22 @@
 // it should have a color property, that is silver by default
 // it should have a method called "say" that returns whatever string is passed in, with "*~*" at the beginning and end of the string
 
+class Unicorn {
+  constructor (name) {
+    this.name = name;
+    this.color = "silver";
+    this.phrase = "";
+  }
 
+  changeColor(newColor) {
+    this.color = newColor;
+  }
+
+  say(newPhrase) {
+    this.phrase = "*~* " + newPhrase + " *~*";
+  }
+
+}
 
 // Write a class called Vampire
 // it should have a dynamic name property
@@ -11,7 +26,17 @@
 // it should have a thirsty property, that is true by default
 // it should have a drink method. When called, the thirsty property changes to false
 
+class Vampire {
+  constructor(name) {
+    this.name = name;
+    this.pet = "bat";
+    this.thirsty = true;
+  }
 
+  drink() {
+    this.thirsty = false;
+  }
+}
 
 //  Write a Dragon class
 // it should have a dynamic name property (string)
@@ -21,7 +46,23 @@
 //  it should have a eat method. If the dragon eats 4 times, it is no longer hungry
   // HINT: This requires you to use your knowledge from the conditionals lesson
 
+  class Dragon {
+    constructor(name, rider, color) {
+      this.name = name;
+      this.rider = rider;
+      this.color = color;
+      this.isHungry = true;
+      this.eatCount = 0;
+    }
 
+    eat() {
+      this.eatCount = this.eatCount + 1;
+
+      if (this.eatCount >= 4) {
+        this.isHungry = false;
+      }
+    }
+  }
 
 //  BIG CHALLNEGE: Write a Hobbit class
 //  it should have a dynamic name property (string)
@@ -31,3 +72,38 @@
 //  it should have an isAdult property (boolean) that is false by default. once a Hobbit is 33, it should be an adult
 //  it should have an isOld property that defaults to false. once a Hobbit is 101, it is old.
 //  it should have a hasRing property. If the Hobbit's name is "Frodo", true, if not, false.
+
+class Hobbit {
+  constructor(name, disposition) {
+    this.name = name;
+    this.disposition = disposition;
+    this.age = 0;
+    this.isAdult = false;
+    this.isOld = false;
+    this.hasRing = false;
+  }
+
+  setAge(age) {
+    this.age = age;
+  }
+
+  celebrateBirthday() {
+    this.age = this.age + 1;
+  }
+
+  checkAge() {
+    if (this.age >= 33) {
+      this.isAdult = true;
+    }
+
+    if (this.age >= 101) {
+      this.isOld = true;
+    }
+  }
+
+  checkRingStatus() {
+    if (this.name === "Frodo") {
+      this.hasRing = true;
+    }
+  }
+}
